@@ -1,40 +1,86 @@
 <!DOCTYPE html>
-<!-- CSS Stylesheets with Relative Paths -->
-<html lang="en-us">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>CSS Stylesheets with Relative Paths</title>
+  <title>Wind Speed</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- This line is money! It points your HTML to the CSS file. -->
-  <!-- Notice the "relative" pathway? It matches a file inside our current directory's "assets" folder. Open it to see our style rules. -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+    <body>
+        <!--Navbar adjustments-->
+  <!--Navbar adjustments-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand text-white" href="index.html">Latitude</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Plots
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="maxtemp.html">Max Temperature</a>
+                        <a class="dropdown-item" href="humidity.html">Humidity</a>
+                        <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                        <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="comparison.html">Comparison</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  
+  <!--create container, rows and columns and add images -->
+  <div class="container content">    
+      <div class="row">
+          <div class="col-md-8">
+              <div class="col-md-12">
+                  <h3>Summary: Latitude vs. X </h3>
+                  <hr>
+                  <div class="thumbnail">
+                      <img class="img-thumbnail float-left" src="Resources/assets/images/Fig1.png " width="50%" alt="temperature">
+                  </div>
+                  <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.  </p> 
+                  
+                  <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
+              </div>
+          </div>
+          <!--visualization adjustments-->
+          <div class="col-md-4">
+              <div class="col-md-12">
+                  <h3>Visualizations</h3>
+                  <hr>
+                  <div class="row">
+                      <div class="col-3 col-md-6">
+                          <a href="temp.html"><img src="Resources/assets/images/Fig1.png" width="100%"  alt="temperature">
+                          </a> 
+                      </div>
+                      <div class="col-3 col-md-6">
+                          <a href="humidity.html"><img src="Resources/assets/images/Fig2.png" width="100%" alt="humidity"></a>
+                      </div>
+                 
+                      <div class="col-3 col-md-6">
+                          <a href="cloudiness.html"><img src="Resources/assets/images/Fig3.png" width="100%"  alt="cloudiness"></a>
+                      </div>
 
-<body>
-
-  <header>
-    <h1>Student Bio</h1>
-  </header>
-
-  <main class="container">
-    <section id="main-bio">
-      <section id="figure">
-        <h2 id="bio-name">Your Name</h2>
-        <img id="bio-image" src="https://placehold.it/200x200" alt="Your Name">
-      </section>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum risus ut justo laoreet consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc dui neque, malesuada egestas aliquet ac, commodo in magna. Etiam mollis odio at mi maximus hendrerit. Integer aliquam id lectus nec hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris rhoncus eget nulla in ornare. Maecenas massa nibh, commodo non condimentum eu, congue tempus neque. Donec neque mi, ullamcorper eget fringilla et, iaculis vitae tortor. Curabitur vel nunc vel mi lobortis ornare ut non nulla. Etiam ornare libero ac suscipit aliquam. Nunc venenatis felis sit amet velit vehicula interdum. Vivamus iaculis condimentum nulla vitae dapibus.</p>
-    </section>
-
-    <aside id="contact-info">
-      <h2>Contact Info</h2>
-      <ul>
-        <li><strong>Email:</strong> <a href="#">someplace@gmail.com</a></li>
-        <li><strong>Github:</strong> <a href="#">sampleName</a></li>
-        <li><strong>Portfolio:</strong> <a href="#">coming soon</a></li>
-      </ul>
-    </aside>
-  </main>
-
+                      <div class="col-3 col-md-6">
+                          <a href="windspeed.html"><img src="Resources/assets/images/Fig4.png"width="100%"  alt="wind speed"></a>
+                      </div>
 </body>
-
 </html>
